@@ -5,7 +5,6 @@ import { Document } from 'prismic-javascript/types/documents';
 import { FormEvent, useState } from 'react';
 import { client } from '../lib/prismic';
 import SEO from '../components/SEO';
-import Header from '../components/Header';
 import {
   Band,
   Bg,
@@ -16,12 +15,14 @@ import {
   Title,
 } from '../styles/pages/Home';
 import Card from '../components/Card/index';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 interface HomeProps {
-  recommendedProducts: Document[];
+  cidadesPlanos: Document[];
 }
 
-const Home: NextPage<HomeProps> = ({ recommendedProducts }) => {
+const Home: NextPage<HomeProps> = ({ cidadesPlanos }) => {
   const router = useRouter();
   const [search, setSearch] = useState('');
 
@@ -59,10 +60,11 @@ const Home: NextPage<HomeProps> = ({ recommendedProducts }) => {
         </Form>
       </Bg>
       <Band style={{ paddingTop: 20 }}>
-        {recommendedProducts.map(recommendedProduct => (
-          <Card key={recommendedProduct.id} post={recommendedProduct} />
+        {cidadesPlanos.map(cidades => (
+          <Card key={cidades.id} post={cidades} />
         ))}
       </Band>
+      <Footer />
     </div>
   );
 };
@@ -70,13 +72,13 @@ const Home: NextPage<HomeProps> = ({ recommendedProducts }) => {
 export default Home;
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
-  const recommendedProducts = await client().query([
-    Prismic.Predicates.at('document.type', 'product'),
+  const cidadesPlanos = await client().query([
+    Prismic.Predicates.at('document.type', 'cidades'),
   ]);
 
   return {
     props: {
-      recommendedProducts: recommendedProducts.results,
+      cidadesPlanos: cidadesPlanos.results,
     },
   };
 };

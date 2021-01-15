@@ -1,8 +1,8 @@
-import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { useRouter } from "next/router";
-import PrismicDOM from "prismic-dom";
-import { Document } from "prismic-javascript/types/documents";
-import { client } from "../../lib/prismic";
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import { useRouter } from 'next/router';
+import PrismicDOM from 'prismic-dom';
+import { Document } from 'prismic-javascript/types/documents';
+import { client } from '../../lib/prismic';
 
 interface ProductProps {
   product: Document;
@@ -38,10 +38,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<ProductProps> = async (context) => {
+export const getStaticProps: GetStaticProps<ProductProps> = async context => {
   const { slug } = context.params;
 
-  const product = await client().getByUID("product", String(slug), {});
+  const product = await client().getByUID('pagina', String(slug), {});
 
   if (!product) {
     return {

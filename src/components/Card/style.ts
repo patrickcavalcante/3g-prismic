@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const CardStyled = styled.div`
   background: white;
@@ -11,6 +11,8 @@ export const CardStyled = styled.div`
   top: 0;
   transition: all 0.1s ease-in;
   cursor: pointer;
+  border-radius: 5px;
+  margin-top: 15px;
 
   &:hover {
     top: -2px;
@@ -18,11 +20,13 @@ export const CardStyled = styled.div`
   }
 
   h1 {
-    font-size: 20px;
+    font-size: 25px;
+    text-align: center;
   }
 
   img {
     max-width: 100%;
+    border-radius: 5px 5px 0px 0px;
   }
 `;
 

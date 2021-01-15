@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink } from "./style";
+import Link from 'next/link';
+import { Nav, NavLink, Bars, NavMenu, NavBtnLink } from './style';
 
 const Header = () => {
   return (
