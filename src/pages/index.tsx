@@ -3,6 +3,7 @@ import Prismic from 'prismic-javascript';
 import { useRouter } from 'next/router';
 import { Document } from 'prismic-javascript/types/documents';
 import { FormEvent, useState } from 'react';
+import Link from 'next/link';
 import { client } from '../lib/prismic';
 import SEO from '../components/SEO';
 import {
@@ -61,7 +62,11 @@ const Home: NextPage<HomeProps> = ({ cidadesPlanos }) => {
       </Bg>
       <Band style={{ paddingTop: 20 }}>
         {cidadesPlanos.map(cidades => (
-          <Card key={cidades.id} post={cidades} />
+          <Link href={`/${cidades.uid}`} key={cidades.id}>
+            <a style={{ textDecoration: 'none' }}>
+              <Card key={cidades.id} post={cidades} />
+            </a>
+          </Link>
         ))}
       </Band>
       <Footer />

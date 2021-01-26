@@ -12,7 +12,6 @@ export const CardStyled = styled.div`
   transition: all 0.1s ease-in;
   cursor: pointer;
   border-radius: 5px;
-  margin-top: 15px;
 
   &:hover {
     top: -2px;
@@ -26,6 +25,7 @@ export const CardStyled = styled.div`
 
   img {
     max-width: 100%;
+    max-height: 180px;
     border-radius: 5px 5px 0px 0px;
   }
 `;

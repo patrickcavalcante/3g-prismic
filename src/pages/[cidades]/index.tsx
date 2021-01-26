@@ -35,7 +35,7 @@ const Cidades: NextPage<CidadeProps> = ({ cidades, operadoras }) => {
         return (
           <li key={operadora.id}>
             <Link
-              href={`${process.env.NEXT_PUBLIC_SITE_URL}${routePath}/${operadora.uid}`}
+              href={`${process.env.NEXT_PUBLIC_API_URL}${routePath}/${operadora.uid}`}
             >
               <a>{PrismicDOM.RichText.asText(operadora.data.title)}</a>
             </Link>

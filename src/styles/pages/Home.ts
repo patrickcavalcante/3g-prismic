@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Bg = styled.div`
   height: 50vh;
   min-height: 330px;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url('./bg.png');
   background-position: center center;
   background-repeat: no-repeat;
